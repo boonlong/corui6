@@ -12,7 +12,7 @@ export class RegisterComponent {
   private shSuccess:boolean=false;
   private pb1:number=0;
   private pb1txt:string="";
-
+  private pbtype:string;//danger,warning,info
   constructor() { }
 
   clearSh(){
@@ -56,11 +56,14 @@ export class RegisterComponent {
     this.pb1=score;
     if (score > 80) {
       this.pb1txt= "strong";
+      this.pbtype="success";
     }else if (score > 60) {
       this.pb1txt= "good";
+      this.pbtype="info";
     }else if (score >= 30) {
       this.pb1txt= "weak";
-    }else { this.pb1txt= "";}
+      this.pbtype="warning";
+    }else { this.pb1txt= "";this.pbtype="danger";}
   }
 
 }

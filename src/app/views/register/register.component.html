@@ -20,14 +20,19 @@
                 <input type="text" class="form-control" [(ngModel)]="regisdata.email" placeholder="Email">
               </div>
 
-              <ngb-progressbar [showValue]="true" type="info" [value]="pb1">{{pb1txt}}</ngb-progressbar>
+              <ngb-progressbar [showValue]="false" type="{{pbtype}}" [value]="pb1" height="30px" [striped]="true">{{pb1txt}}</ngb-progressbar>
               <div class="input-group mb-3">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
                 </div>
                 <input type="password" class="form-control" [(ngModel)]="regisdata.password" #pass1 (change)="checkPassStrength(pass1.value)" placeholder="Password">
               </div>
-              
+              <div class="alert alert-success" *ngIf="shSuccess" role="alert">
+                confirm password ok
+              </div>
+              <div class="alert alert-danger" *ngIf="shError" role="alert">
+                confirm password error please retype!
+              </div>
               <div class="input-group mb-4">
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="icon-lock"></i></span>
@@ -38,12 +43,6 @@
             </div>
             <div class="card-footer p-4">
               <div class="row">
-                  <div class="alert alert-success" *ngIf="shSuccess" role="alert">
-                      This is a success alert—check it out!
-                    </div>
-                    <div class="alert alert-danger" *ngIf="shError" role="alert">
-                      This is a danger alert—check it out!
-                    </div>
                 {{regisdata.username}},
                 {{regisdata.email}},
                 {{regisdata.password}}

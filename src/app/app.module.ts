@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
@@ -20,9 +20,6 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-
-
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 const APP_CONTAINERS = [
@@ -60,7 +57,7 @@ import { HomeComponent } from './views/home/home.component';
     TabsModule.forRoot(),
     ChartsModule,
     FormsModule,
-    NgbModule
+    NgbModule.forRoot(),
   ],
   declarations: [
     AppComponent,
